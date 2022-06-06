@@ -1,0 +1,15 @@
+/media/robertpecz/Új kötet/Projects/DesignPatterns/bin/Debug/net6.0/DesignPatterns
+/media/robertpecz/Új kötet/Projects/DesignPatterns/bin/Debug/net6.0/DesignPatterns.deps.json
+/media/robertpecz/Új kötet/Projects/DesignPatterns/bin/Debug/net6.0/DesignPatterns.runtimeconfig.json
+/media/robertpecz/Új kötet/Projects/DesignPatterns/bin/Debug/net6.0/DesignPatterns.dll
+/media/robertpecz/Új kötet/Projects/DesignPatterns/bin/Debug/net6.0/DesignPatterns.pdb
+/media/robertpecz/Új kötet/Projects/DesignPatterns/obj/Debug/net6.0/DesignPatterns.csproj.AssemblyReference.cache
+/media/robertpecz/Új kötet/Projects/DesignPatterns/obj/Debug/net6.0/DesignPatterns.GeneratedMSBuildEditorConfig.editorconfig
+/media/robertpecz/Új kötet/Projects/DesignPatterns/obj/Debug/net6.0/DesignPatterns.AssemblyInfoInputs.cache
+/media/robertpecz/Új kötet/Projects/DesignPatterns/obj/Debug/net6.0/DesignPatterns.AssemblyInfo.cs
+/media/robertpecz/Új kötet/Projects/DesignPatterns/obj/Debug/net6.0/DesignPatterns.csproj.CoreCompileInputs.cache
+/media/robertpecz/Új kötet/Projects/DesignPatterns/obj/Debug/net6.0/DesignPatterns.dll
+/media/robertpecz/Új kötet/Projects/DesignPatterns/obj/Debug/net6.0/refint/DesignPatterns.dll
+/media/robertpecz/Új kötet/Projects/DesignPatterns/obj/Debug/net6.0/DesignPatterns.pdb
+/media/robertpecz/Új kötet/Projects/DesignPatterns/obj/Debug/net6.0/DesignPatterns.genruntimeconfig.cache
+/media/robertpecz/Új kötet/Projects/DesignPatterns/obj/Debug/net6.0/ref/DesignPatterns.dll
