@@ -11,9 +11,9 @@ namespace ConsoleUI
             //Populate the applicants list.                
             List<DesignPatterns.IPersonModel> applicants = new List<DesignPatterns.IPersonModel>
             {
-                new DesignPatterns.Person {FirstName = "Kenya", LastName = "Christina"},
-                new DesignPatterns.Person {FirstName = "Jess", LastName = "Cornelia"},
-                new DesignPatterns.Person {FirstName = "Stering", LastName = "Ray"}
+                DesignPatterns.PersonFactory.CreatePerson("Kenya", "Christina"),
+                DesignPatterns.PersonFactory.CreatePerson("Jess", "Cornelia"),
+                DesignPatterns.PersonFactory.CreatePerson("Stering", "Ray")
             };
 
             //Everybody whos last name starts with 'C' is going to be an employee.
@@ -35,14 +35,15 @@ namespace ConsoleUI
             for(int i = 0; i < applicants.Count; i++)
             {
                 if (applicants[i].Level == DesignPatterns.EmployeeLevel.employee)
-                {               
-                    employees.Add(new DesignPatterns.Employee());                   
+                {                       
+                    employees.Add(DesignPatterns.PersonFactory.CreateEmployee()); 
+
                 }
                 else if (applicants[i].Level == DesignPatterns.EmployeeLevel.manager)
                 {
-                    employees.Add(new DesignPatterns.Manager());
+                    employees.Add(DesignPatterns.PersonFactory.CreateManager());
                 }             
-                DesignPatterns.Account creatNewEmployee = new DesignPatterns.Account();
+                DesignPatterns.IAccountModel creatNewEmployee = DesignPatterns.AccountFactory.FinalizeEmployee();
                 creatNewEmployee.CreateEmployee(applicants[i],employees[i]);
             }            
         }
