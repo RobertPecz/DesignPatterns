@@ -1,38 +1,43 @@
 using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace DesignPatterns
 {
-    public class PersonDataCapture
+    public class PersonDataCapture : IPersonDataCapture
     {
         public List<IPersonModel> applicants;
+        public IEnumerable<IPersonModel> futureEmployee;
+        public IEnumerable<IPersonModel> futureManager;
         public PersonDataCapture()
         {
             applicants = new List<IPersonModel>();
+            futureEmployee = new IEnumerable<IPersonModel>();
+            futureManager = new IEnumerable<IPersonModel>();
         }
         /// <summary>
         /// Populate a Person object.
         /// </summary>
         /// <param name="person">The actual person object which is going to be populated.</param>
-        public static void Capture(Person person)
-        { 
+        public void Capture(Person person)
+        {
             try
-            {           
+            {
                 StandardMessages.DisplayNameQuestion("first name");
                 person.FirstName = Console.ReadLine();
 
                 StandardMessages.DisplayNameQuestion("last name");
                 person.LastName = Console.ReadLine();
             }
-            catch(NullReferenceException e)
+            catch (NullReferenceException e)
             {
-                if(person == null)
+                if (person == null)
                 {
                     Console.WriteLine("Your person cannot be null.");
                     throw e;
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
@@ -54,6 +59,26 @@ namespace DesignPatterns
                 DesignPatterns.PersonFactory.CreatePerson("Jess", "Cornelia"),
                 DesignPatterns.PersonFactory.CreatePerson("Stering", "Ray")
             };
+        }
+
+        /// <summary>
+        /// Populate futureEmployee and futureManager list and set the employee level.
+        /// </summary>
+        public void PopulateFutureEmployeelist()
+        {
+            //Everybody whos last name starts with 'C' is going to be an employee.
+            futureEmployee = applicants.Where(nonManager => nonManager.LastName.StartsWith('C'));
+            foreach (var employee in futureEmployee)
+            {
+                employee.SetEmployeeLevel(DesignPatterns.EmployeeLevel.employee);
+            }
+
+            //Everyone else is going to be a manager.
+            futureManager = applicants.Where(nonEmployee => !futureEmployee.Contains(nonEmployee));
+            foreach (var manager in futureManager)
+            {
+                manager.SetEmployeeLevel(DesignPatterns.EmployeeLevel.manager);
+            }
         }
     }
 }

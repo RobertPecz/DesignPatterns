@@ -16,5 +16,15 @@ namespace DesignPatterns
         {
             return new Manager();
         }
+
+        public static IPersonDataCapture PersonDataCapture()
+        {
+            return new PersonDataCapture();
+        }
+        
+        public static IPersonValidator PersonValidator()
+        {
+            return new PersonValidator();
+        }
     }
 }
