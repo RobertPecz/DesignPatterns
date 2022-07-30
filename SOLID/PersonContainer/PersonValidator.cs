@@ -4,6 +4,11 @@ namespace DesignPatterns
 {
     public class PersonValidator
     {
+        /// <summary>
+        /// Validate that the person first and lastname is not null or empty or white space.
+        /// </summary>
+        /// <param name="person">The Person object which is under validation.</param>
+        /// <returns>True if the Person object first and last name is not null or empty or white space. False if the Person object first or last name is null or empty or white space.</returns>
         public static bool Validate(Person person)
         {
             try

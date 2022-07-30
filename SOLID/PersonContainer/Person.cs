@@ -5,6 +5,7 @@ namespace DesignPatterns
         
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string MiddleName { get; set; } = "";
         public EmployeeLevel Level { get; private set; }       
 
         public Person(string firstName, string lastName)

@@ -1,7 +1,10 @@
 using System;
 
 namespace DesignPatterns
-{   
+{
+    /// <summary>
+    /// Solution wide messages.
+    /// </summary>   
     public class StandardMessages
     {
         public static void WelcomeMessage()

@@ -4,6 +4,11 @@ namespace DesignPatterns
 {
     public class Account : IAccountModel
     {
+        /// <summary>
+        /// Populate an employee object from a person object.
+        /// </summary>
+        /// <param name="person">Who is going to be the employee object.</param>
+        /// <param name="employee">The employee object result.</param>
         public void CreateEmployee(IPersonModel person, IEmployeeModel employee)
         {
             try
