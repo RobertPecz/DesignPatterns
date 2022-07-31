@@ -1,7 +1,9 @@
+using System.Collections.Generic;
+
 namespace DesignPatterns
 {
     interface IEmployeeCreator
     {
-        void InitialEmployeeCreator();  
+        void InitialEmployeeCreator(List<IPersonModel> applicants);  
     }
 }
