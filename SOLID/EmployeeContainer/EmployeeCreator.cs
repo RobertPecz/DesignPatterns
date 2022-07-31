@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace DesignPatterns
 {
     public class EmployeeCreator : IEmployeeCreator
@@ -7,7 +9,7 @@ namespace DesignPatterns
         {
             employees = new List<IEmployeeModel>();
         }
-        public void InitialEmployeeCreator()
+        public void InitialEmployeeCreator(List<IPersonModel> applicants)
         {
         employees = new List<DesignPatterns.IEmployeeModel>();
             for(int i = 0; i < applicants.Count; i++)

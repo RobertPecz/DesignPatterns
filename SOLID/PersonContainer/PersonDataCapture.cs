@@ -12,8 +12,8 @@ namespace DesignPatterns
         public PersonDataCapture()
         {
             applicants = new List<IPersonModel>();
-            futureEmployee = new IEnumerable<IPersonModel>();
-            futureManager = new IEnumerable<IPersonModel>();
+            futureEmployee = new List<IPersonModel>();
+            futureManager = new List<IPersonModel>();
         }
         /// <summary>
         /// Populate a Person object.
