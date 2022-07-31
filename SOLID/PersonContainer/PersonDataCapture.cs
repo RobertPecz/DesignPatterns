@@ -16,18 +16,26 @@ namespace DesignPatterns
             futureManager = new List<IPersonModel>();
         }
         /// <summary>
-        /// Populate a Person object.
+        /// Populate a Person object manually.
         /// </summary>
         /// <param name="person">The actual person object which is going to be populated.</param>
-        public void Capture(Person person)
+        public void CaptureManually(Person person)
         {
             try
             {
-                StandardMessages.DisplayNameQuestion("first name");
-                person.FirstName = Console.ReadLine();
+                IPersonValidator personValidator = PersonFactory.PersonValidator();
+                do
+                {
+                    StandardMessages.DisplayNameQuestion("first name");
+                    person.FirstName = Console.ReadLine();
 
-                StandardMessages.DisplayNameQuestion("last name");
-                person.LastName = Console.ReadLine();
+                    StandardMessages.DisplayNameQuestion("last name");
+                    person.LastName = Console.ReadLine();
+                }while(personValidator.Validate(person));
+
+                StandardMessages.DisplayNameQuestion("middle name");
+                person.MiddleName = Console.ReadLine();
+                PopulateApplicantsList(person);
             }
             catch (NullReferenceException e)
             {
@@ -43,22 +51,20 @@ namespace DesignPatterns
             }
         }
 
+        public void PersonCapturer()
+        {
+            //Capture single or multiple person manually or with external file.
+        }
+
         /// <summary>
         /// Populating a list which is containing the applicants. This objects are going to be the employees or the managers.
         /// </summary>
         /// <param name="firstName">Person first name. Can't be null or empty.</param>
         /// <param name="LastName">Person last name. Can't be null or empty.</param>
         /// <param name="middleName">Person middle name. Empty on default.</param>
-        public void PopulateApplicantsList(string firstName, string LastName, string middleName = "")
-        {
-            applicants.Add(PersonFactory.CreatePerson(firstName, LastName));
-            //Populate the applicants list.                
-            applicants = new List<DesignPatterns.IPersonModel>
-            {
-                DesignPatterns.PersonFactory.CreatePerson("Kenya", "Christina"),
-                DesignPatterns.PersonFactory.CreatePerson("Jess", "Cornelia"),
-                DesignPatterns.PersonFactory.CreatePerson("Stering", "Ray")
-            };
+        public void PopulateApplicantsList(Person person)
+        {          
+            applicants.Add(PersonFactory.CreatePerson(person.FirstName, person.LastName, person.MiddleName));
         }
 
         /// <summary>

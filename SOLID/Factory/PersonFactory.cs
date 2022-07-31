@@ -2,9 +2,9 @@ namespace DesignPatterns
 {
     public class PersonFactory
     {
-        public static IPersonModel CreatePerson(string firstName, string lastName)
+        public static IPersonModel CreatePerson(string firstName, string lastName, string middleName)
         {
-            return new Person(firstName, lastName);
+            return new Person(firstName, lastName, middleName);
         }
 
         public static IEmployeeModel CreateEmployee()

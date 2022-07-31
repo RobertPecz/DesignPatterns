@@ -2,7 +2,8 @@ namespace DesignPatterns
 {
     public interface IPersonDataCapture
     {
-        void Capture(Person person);
-        void PopulateApplicantsList(string firstName, string LastName, string middleName = "");
+        void CaptureManually(Person person);
+        void PersonCapturer();
+        void PopulateApplicantsList(Person person);
     }
 }

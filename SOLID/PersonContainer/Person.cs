@@ -8,10 +8,11 @@ namespace DesignPatterns
         public string MiddleName { get; set; } = "";
         public EmployeeLevel Level { get; private set; }       
 
-        public Person(string firstName, string lastName)
+        public Person(string firstName, string lastName, string middleName)
         {
             FirstName = firstName;
             LastName = lastName;
+            MiddleName = middleName;
         }
 
         public void SetEmployeeLevel(EmployeeLevel level)
